@@ -1,0 +1,4 @@
+<?page title="Auto Generated index.zul"?>
+<window id="win" title="Hello World!!" border="normal" width="200px" apply="test.TestController">
+	<simplelabel id="slabel" value="hello" />
+</window>
