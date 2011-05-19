@@ -1,4 +1,4 @@
-package test;
+package org.zkoss.zkscala.test;
 
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 
