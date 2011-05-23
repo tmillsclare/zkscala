@@ -1,3 +1,0 @@
-=zkscala=
-
-This project provides some helper classes for using ZK with the Scala language. In addition it also provides examples of usage.
