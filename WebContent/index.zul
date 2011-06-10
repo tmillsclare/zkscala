@@ -1,4 +1,0 @@
-<?page title="Auto Generated index.zul"?>
-<window id="win" title="Hello World!!" border="normal" width="200px" apply="org.zkoss.zkscala.test.TestController">
-	<simplelabel id="slabel" value="hello" />
-</window>
