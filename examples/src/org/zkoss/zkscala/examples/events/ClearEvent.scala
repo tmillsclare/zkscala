@@ -1,4 +1,4 @@
-package examples.com.foo.events
+package org.zkoss.zkscala.examples.events
 
 import org.zkoss.zk.au.{AuRequest, AuRequests}
 

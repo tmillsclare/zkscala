@@ -4,8 +4,8 @@
  
 	<component>
 		<component-name>simplelabel</component-name>
-		<component-class>examples.com.foo.SimpleLabel</component-class>
-		<widget-class>examples.com.foo.SimpleLabel</widget-class>
+		<component-class>org.zkoss.zkscala.examples.component.SimpleLabel</component-class>
+		<widget-class>org.zkoss.zkscala.examples.component.SimpleLabel</widget-class>
 		<mold>
 			<mold-name>default</mold-name>
 			<mold-uri>mold/simple-label.js</mold-uri>

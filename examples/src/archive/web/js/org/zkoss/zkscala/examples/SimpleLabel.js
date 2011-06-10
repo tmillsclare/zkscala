@@ -1,6 +1,6 @@
 zk.$package('simplelabel');
 
-examples.com.foo.SimpleLabel = zk.$extends(zk.Widget, {
+org.zkoss.zkscala.examples.component.SimpleLabel = zk.$extends(zk.Widget, {
 	_value : '', // default value
 	_cleared: false,
 	

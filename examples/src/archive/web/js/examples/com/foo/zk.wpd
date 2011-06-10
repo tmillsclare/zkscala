@@ -1,3 +1,0 @@
-<package name="examples.com.foo" language="xul/html">
-	<widget name="SimpleLabel"/>
-</package>

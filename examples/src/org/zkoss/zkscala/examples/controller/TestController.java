@@ -1,8 +1,8 @@
-package org.zkoss.zkscala.test;
+package org.zkoss.zkscala.examples.controller;
 
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zkscala.examples.events.ClearEvent;
 
-import examples.com.foo.events.ClearEvent;
 
 public class TestController extends GenericForwardComposer {
 

@@ -1,14 +1,12 @@
-package examples.com.foo
+package org.zkoss.zkscala.examples.component
 
-import examples.com.foo.events.ClearEvent
-
-import org.zkoss.zkscala.utils.ScalaComponentUtils
+import org.zkoss.zkscala.lib.utils.ScalaComponentUtils
 import org.zkoss.zk.au.AuRequest
-
 import org.zkoss.zk.ui.HtmlBasedComponent
 import org.zkoss.zk.ui.event.Events
-
 import org.zkoss.zk.ui.sys.ComponentCtrl._
+
+import org.zkoss.zkscala.examples.events.ClearEvent
 
 class SimpleLabel extends HtmlBasedComponent {
 	ScalaComponentUtils.addClientEvent(classOf[SimpleLabel], ClearEvent.NAME, CE_IMPORTANT)
