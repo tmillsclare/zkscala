@@ -1,7 +1,12 @@
-build/
 examples/WebContent/WEB-INF/
 examples/WebContent/META-INF/
+examples/target
+examples/project
+examples/.history
+examples/build/target
+
 lib/src/META-INF/
 lib/target/
 lib/.history
 lib/project
+lib/build/target
