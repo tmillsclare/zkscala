@@ -3,3 +3,5 @@ examples/WebContent/WEB-INF/
 examples/WebContent/META-INF/
 lib/src/META-INF/
 lib/target/
+lib/.history
+lib/project
