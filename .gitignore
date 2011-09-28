@@ -4,6 +4,8 @@ examples/target
 examples/.history
 examples/build
 examples/project/target
+examples/project/plugins/target
+examples/project/plugins/project
 
 lib/src/META-INF/
 lib/target/
