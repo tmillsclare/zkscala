@@ -27,9 +27,10 @@ object Dependencies {
 	val zkzul = "org.zkoss.zk" % "zul" % zkversion
 	val zkzhtml = "org.zkoss.zk" % "zhtml" % zkversion
 	val zkzcommon = "org.zkoss.common" % "zcommon" % zkversion
-	val zkzweb = "org.zkoss.common" % "zweb" % zkversion
+	val zkzweb = "org.zkoss.common" % "zweb" % zkversion	
+	val zkbreeze = "org.zkoss.theme" % "breeze" % zkversion
 	val zkel = "org.zkoss.zkforge.el" % "zcommons-el" % "1.1.0" 
-	
+
 	val commonslogging = "commons-logging" % "commons-logging" % "1.1.1"
 	val commonsfileupload = "commons-fileupload" % "commons-fileupload" % "1.2.1"
 	val commonsio = "commons-io" % "commons-io" % "1.3.1"
@@ -51,6 +52,7 @@ object Dependencies {
 		zkzhtml,
 		zkzcommon,
 		zkzweb,
+		zkbreeze,
 		zkel
 	)
 	

@@ -1,4 +1,72 @@
 <?page title="Auto Generated index.zul"?>
-<window id="win" title="Hello World!!" border="normal" width="200px" apply="org.zkoss.zkscala.examples.controller.TestController">
-	<simplelabel id="slabel" value="hello" />
-</window>
+<?component name="category" extends="label" style="font-weight:bold; font-size: 0.9 em;" ?>
+<?component name="item" extends="toolbarbutton" sclass="item"?>
+<?link rel="stylesheet" type="text/css" href="./app/login.css" ?>
+<zk>
+<style>
+.sidebar-left .content {
+	padding: 8px;
+	background: #EEE;
+	border: 1px solid #CCC;
+}
+.content .item {
+	padding-left: 20px;
+	color: #333333;
+	font-size: 11px;
+	text-decoration:none;
+	line-height: 12px;
+}
+.content .z-vbox .item:hover {
+	text-decoration: underline;
+}
+.z-toolbarbutton-over {
+	border: 0;
+}
+.z-toolbarbutton-over .z-toolbarbutton-body {
+	border: 0;
+}
+.sidebar-left .z-west-header {
+	border: 0 none;
+	background: transparent none repeat scroll 0 0;
+	font-family: verdana,arial;
+	color:#333333;
+	font-weight:bold;
+}
+.sidebar-left .content {
+	padding: 8px;
+	background: #EEE;
+	border: 1px solid #CCC;
+}
+.sidebar-left .content {
+	padding: 8px;
+	background: #EEE;
+	border: 1px solid #CCC;
+}
+.banner .z-north-body {
+	background: #FFFFFF;
+}
+</style>
+<borderlayout xmlns:n="http://www.zkoss.org/2005/zk/native">
+	<north sclass="banner" border="none" size="100px" collapsible="true" style="background: #FFFFFF;">
+		<hbox width="100%" height="100%" align="center">
+			<separator width="5px"/>
+			<n:span style="color: #000000; font-size: 2.8em;font-family: Helvetica, Arial, FreeSans, sans-serif">
+				zkscala
+			</n:span>
+		</hbox>
+	</north>
+	<west title="Examples" flex="true" size="200px" border="0" sclass="sidebar-left" autoscroll="true">
+		<div sclass="content">
+			<vbox>
+				<label value="Simple Examples"/>
+					<item label="Listbox" onClick='xcontents.src = "/examples/listbox.zul"'></item>
+				<label value="Components"/>
+					<item label="SimpleLabel component" onClick='xcontents.src = "/components/simplelabel.zul"'/>
+			</vbox>
+		</div>
+	</west>
+	<center autoscroll="true" border="0" flex="true">
+		<include mode="instant" style="padding:20px;" id="xcontents"></include>
+	</center>
+</borderlayout>
+</zk>
