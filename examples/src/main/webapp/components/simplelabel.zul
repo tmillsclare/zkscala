@@ -1,0 +1,3 @@
+<window id="win" title="Hello World!!" border="normal" width="200px" apply="org.zkoss.zkscala.examples.controller.TestController">
+	<simplelabel id="slabel" value="hello" />
+</window>
