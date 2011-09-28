@@ -3,10 +3,10 @@ examples/WebContent/META-INF/
 examples/target
 examples/.history
 examples/build
-examples/project/build
+examples/project/target
 
 lib/src/META-INF/
 lib/target/
 lib/.history
 lib/build
-lib/project/build
+lib/project/target
