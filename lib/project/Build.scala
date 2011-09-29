@@ -22,12 +22,14 @@ object Dependencies {
 
 	val zkce = "org.zkoss.zk" % "zk" % zkversion
 	val zkzul = "org.zkoss.zk" % "zul" % zkversion
+	val zkplus = "org.zkoss.zk" % "zkplus" % zkversion
 
 	val scalatest = "org.scalatest" % "scalatest_2.9.0" % "1.4.1" % "test"
 
 	val zkDeps = Seq(
 		zkce,
-		zkzul
+		zkzul,
+		zkplus
 	)
 }
 

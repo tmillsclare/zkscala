@@ -1,0 +1,49 @@
+.cardSys .topic,
+.cardSys .topic .z-label,
+.cardSys .z-window-embedded-header {
+    font-weight: bold;
+    font-size: 14px;
+}
+.cardSys .z-grid,
+.cardSys .z-listbox {
+    border: 1px solid #9F9F9F;
+}
+.cardSys .z-listbox {
+    border-right: 0 none;
+    border-bottom: 0 none;
+}
+.employee-list .z-listcell-cnt {
+    text-align: center;
+}
+.card-pre .card {
+    margin: 70px 50px 50px;
+    text-align: center;
+    width: 300px;
+    height: 168px;
+    -moz-box-shadow: 0px 0px 8px gray;
+    -webkit-box-shadow: 0px 0px 8px gray;
+    box-shadow: 0px 0px 8px gray;
+    background-color: #008BB6; 
+}
+.card-pre .card .title {
+    margin-top: 10px;
+}
+.card-pre .card .title,
+.card-pre .card .z-label {
+    color: white;
+    font-size: 0.95em ;
+    font-family: monospace;
+    text-shadow: 1px 1px 3px #3C3C3C;
+}
+.card-pre .card .name {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ECECEC;
+    text-shadow: 1px 1px 3px #3C3C3C;
+}
+.card-pre .card .number {
+    margin-top: 15px;
+    font-size: 12px;
+    color: white;
+}

@@ -66,7 +66,7 @@
 		</div>
 	</west>
 	<center autoscroll="true" border="0" flex="true">
-		<include mode="instant" style="padding:20px;" id="xcontents"></include>
+		<include mode="defer" style="padding:20px;" id="xcontents"></include>
 	</center>
 </borderlayout>
 </zk>
