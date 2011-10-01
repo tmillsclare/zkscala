@@ -40,6 +40,16 @@ package org.zkoss.zkscala.lib.models {
 			fireEvent(ListDataEvent.INTERVAL_REMOVED, start, end - start)
 		}
 
+		def clear() = {
+			
+			val listSize = _list.size
+
+			if(listSize > 0) {
+				_list.clear
+				fireEvent(ListDataEvent.INTERVAL_REMOVED, 0, listSize)
+			}
+		}
+
 		def getSize() : Int = _list.size
 
 		def getElementAt(index : Int) : Object = {
@@ -88,6 +98,8 @@ package org.zkoss.zkscala.lib.models {
 			Collections.sort(_list, newComp)
 			fireEvent(ListDataEvent.STRUCTURE_CHANGED, -1, -1)
 		}
+
+		override def toString = _list.mkString(this.getClass.getSimpleName + "(", ",", ")")
 
 	}
 }

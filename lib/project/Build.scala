@@ -24,12 +24,16 @@ object Dependencies {
 	val zkzul = "org.zkoss.zk" % "zul" % zkversion
 	val zkplus = "org.zkoss.zk" % "zkplus" % zkversion
 
-	val scalatest = "org.scalatest" % "scalatest_2.9.0" % "1.4.1" % "test"
+	val scalatest = "org.scalatest" % "scalatest_2.9.0" % "1.6.1" % "test"
 
 	val zkDeps = Seq(
 		zkce,
 		zkzul,
 		zkplus
+	)
+
+	val scalaTest = Seq(
+		scalatest
 	)
 }
 
@@ -43,7 +47,7 @@ object ZKScalaBuild extends Build {
 		file("."),
 		settings = buildSettings ++ Seq(
 			resolvers := Seq(zkcerepo),
-			libraryDependencies ++= zkDeps
+			libraryDependencies ++= zkDeps ++ scalaTest
 		)
 	)
 }
