@@ -67,7 +67,14 @@ package org.zkoss.zkscala.lib.test.models {
 		}
 
 		test("indexOf") {
-			pending
+			val person = "Amy Walters"
+			val person2 = "Second Person"
+			listModel.add(person)
+			listModel.add(person2)
+			info(listModel.toString)
+
+			assert(listModel.indexOf(person) == 0)
+			assert(listModel.indexOf(person2) == 1)
 		}
 		
 	}
