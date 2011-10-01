@@ -1,0 +1,20 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./win"?>
+<window id="win" border="none" apply="org.zkoss.zkscala.examples.grid.autosorting.GridAutosortingController">
+    <grid model="@{win$composer.allContributors}" width="800px" vflex="true">
+        <auxhead>
+            <auxheader colspan="3" class="topic">Contributor List</auxheader>
+        </auxhead>
+        <columns>
+            <column label="Title (Sort Alphabetically)" width="200px" sort="auto(Title)" align="center" />
+            <column label="Full Name (Sort Alphabetically by First Name and Last Name)" sort="auto(firstName, lastName)" align="center" />
+            <column label="Extension (Sort Numerically)" sort="auto(extension)" width="200px" align="center" />
+        </columns>
+        <rows>
+            <row self="@{each=Contributor}">
+                <label value="@{Contributor.title}" />
+                <label value="@{Contributor.fullName}" />
+                <label value="@{Contributor.extension}" />
+            </row>
+        </rows>
+    </grid>
+</window>

@@ -1,10 +1,16 @@
 package org.zkoss.zkscala.lib.models {
 	
 	import scala.collection.mutable.ListBuffer
-	import org.zkoss.zul.event.ListDataEvent;
-	import org.zkoss.zk.ui.UiException;
+	
+	import collection.JavaConversions._
 
-	class ListModelList[T](list : Seq[T]) extends AbstractListModel {
+	import java.util.Collections
+	import java.util.Comparator
+
+	import org.zkoss.zul.event.ListDataEvent
+	import org.zkoss.zk.ui.UiException
+
+	class ListModelList[T](list : Seq[T]) extends AbstractListModel with org.zkoss.zul.ListModelExt {
 
 		protected var _list = ListBuffer.empty[T]
 
@@ -55,6 +61,32 @@ package org.zkoss.zkscala.lib.models {
 
 		def +=(item : T) = {
 			add(item)
+		}
+
+		//removing items from the list
+		def remove(item : T) {
+			
+			val itemIndex = _list.indexOf(item)
+			
+			if(itemIndex > -1) {
+				_list -= item
+				fireEvent(ListDataEvent.INTERVAL_REMOVED, itemIndex, itemIndex)
+			}
+		}
+
+		def -=(item : T) {
+			remove(item)
+		}
+
+		//sorting for ListModelExt
+		def sort(cmpr : java.util.Comparator[_], asc : Boolean) {
+			
+			//perform conversion to work around the API
+			//TODO: Fix this when ZK 6 comes out
+			var newComp : Comparator[T] = cmpr.asInstanceOf[java.util.Comparator[T]]
+
+			Collections.sort(_list, newComp)
+			fireEvent(ListDataEvent.STRUCTURE_CHANGED, -1, -1)
 		}
 
 	}

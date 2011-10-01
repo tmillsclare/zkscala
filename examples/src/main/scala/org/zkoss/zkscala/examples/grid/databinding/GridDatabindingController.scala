@@ -1,11 +1,13 @@
-package org.zkoss.zkscala.examples.listbox {
+package org.zkoss.zkscala.examples.grid.databinding {
 
 	import org.zkoss.zk.ui.util.GenericForwardComposer
 	import org.zkoss.zk.ui.Component
 
 	import org.zkoss.zkscala.lib.models.BindingListModelList
 
-	class ListboxController extends GenericForwardComposer {
+	import scala.reflect.BeanProperty
+
+	class GridDatabindingController extends GenericForwardComposer {
 		
 		val titles = List("Code", "Bugs", "Docs", "Arts")
 
@@ -32,9 +34,7 @@ package org.zkoss.zkscala.examples.listbox {
 		    new Contributor("Gabby", "Taffy", titles.apply(3), 646)
 		)
 		
-		var _selected = defaultContributor
-		def getSelected() : Contributor = _selected
-		def setSelected(contributor : Contributor) = _selected = contributor
+		@BeanProperty var selected = defaultContributor
 
 		val contributorListModel = new BindingListModelList[Contributor](myContributorList)
 		val myTitleListModel = new BindingListModelList[String](titles)

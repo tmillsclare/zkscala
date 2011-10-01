@@ -58,10 +58,11 @@
 	<west title="Examples" flex="true" size="200px" border="0" sclass="sidebar-left" autoscroll="true">
 		<div sclass="content">
 			<vbox>
-				<label value="Simple Examples"/>
-					<item label="Listbox" onClick='xcontents.src = "/examples/listbox.zul"'></item>
+				<label value="Grid"/>
+					<a label="Databinding" onClick='xcontents.src = "/examples/grid/databinding/index.zul"'></a>
+					<a label="Autosorting" onClick='xcontents.src = "/examples/grid/autosorting/index.zul"'></a>
 				<label value="Components"/>
-					<item label="SimpleLabel component" onClick='xcontents.src = "/components/simplelabel.zul"'/>
+					<a label="SimpleLabel component" onClick='xcontents.src = "/components/simplelabel.zul"'/>
 			</vbox>
 		</div>
 	</west>

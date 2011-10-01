@@ -1,6 +1,6 @@
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./win"?>
-<window id="win" sclass="cardSys" border="none" apply="org.zkoss.zkscala.examples.listbox.ListboxController">
-    <style src="/examples/listbox/Customize.css" />
+<window id="win" sclass="cardSys" border="none" apply="org.zkoss.zkscala.examples.grid.databinding.GridDatabindingController">
+    <style src="/examples/grid/databinding/Customize.css" />
     <hlayout spacing="0">
         <listbox sclass="employee-list" model="@{win$composer.allContributors}" selectedItem="@{win$composer.selected}" rows="10" width="401px"
             vflex="true">

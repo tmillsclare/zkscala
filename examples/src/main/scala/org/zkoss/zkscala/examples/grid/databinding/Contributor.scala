@@ -1,4 +1,4 @@
-package org.zkoss.zkscala.examples.listbox {
+package org.zkoss.zkscala.examples.grid.databinding {
 
 	import scala.reflect.BeanProperty
 
