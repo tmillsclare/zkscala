@@ -10,7 +10,18 @@ package org.zkoss.zkscala.lib.models {
 	import org.zkoss.zul.event.ListDataEvent
 	import org.zkoss.zk.ui.UiException
 
-	class ListModelList[T](list : Seq[T]) extends AbstractListModel with org.zkoss.zul.ListModelExt {
+	/**
+	* This is the ListModel as a {@link scala.collection.Seq} to be used with the Grid and ListBox.
+	* Add or remove the contents of this model as a List would cause the associated Listbox to change accordingly.
+	*
+	* <p>For more information, please refer to
+	* <a href="http://books.zkoss.org/wiki/ZK_Developer%27s_Reference/MVC/Model/List_Model">ZK Developer's Reference: List Model</a>
+	*
+	* @author Timothy Clare
+	* @constructor create a new ListModelList using the Seq given, this will always create a copy of the data
+	* @see BindingListModelList
+	*/
+	class ListModelList[T](var list : Seq[T] = null) extends AbstractListModel with org.zkoss.zul.ListModelExt {
 
 		protected var _list = ListBuffer.empty[T]
 
@@ -18,10 +29,13 @@ package org.zkoss.zkscala.lib.models {
 			list.foreach(item => _list += item)
 		}
 
-		def this() = {
-			this(null)
-		}
-
+		/** 
+	 	* Remove from fromIndex(inclusive) to toIndex(exclusive). If fromIndex equals toIndex, 
+	 	* this methods do nothing.
+		*
+		* @param start the start index (inclusive) to be removed.
+		* @param end the end index (exclusive) to be removed.
+		*/
 		def removeRange(start : Int, end : Int) : Unit = {
 			if(start > end)	 {
 				throw new UiException("the start must be less than the end: " + start + ", end: " + end)
@@ -40,6 +54,10 @@ package org.zkoss.zkscala.lib.models {
 			fireEvent(ListDataEvent.INTERVAL_REMOVED, start, end - start)
 		}
 
+		/** 
+	 	* Clears the model
+		*
+		*/
 		def clear() = {
 			
 			val listSize = _list.size
@@ -50,6 +68,11 @@ package org.zkoss.zkscala.lib.models {
 			}
 		}
 
+		/**
+		* Return the size of internal {@link scala.collection.mutable.ListBuffer}
+		*
+		* @return the size of the list
+		*/
 		def getSize() : Int = _list.size
 
 		def getElementAt(index : Int) : Object = {
@@ -57,23 +80,42 @@ package org.zkoss.zkscala.lib.models {
 			returnValue.asInstanceOf[java.lang.Object]
 		}
 
-		//adding items to the list
+		/**
+		* Add item to the model
+		*
+		* @param index add the item at the relevant index
+		* @param item the item to add to the model
+		*/
 		def add(index : Int, item : T) = {	
 			_list.insert(index, item)
 			fireEvent(ListDataEvent.INTERVAL_ADDED, index, index)
 		}
 
+		/**
+		* Add item to the model
+		*
+		* @param item the item to add to the model
+		*/
 		def add(item : T) = {
 			val il = _list.size
 			_list += item
 			fireEvent(ListDataEvent.INTERVAL_ADDED, il, il)
 		}
 
+		/**
+		* Add item to the model
+		*
+		* @param item the item to add to the model
+		*/
 		def +=(item : T) = {
 			add(item)
 		}
 
-		//removing items from the list
+		/**
+		* Remove item to the model
+		*
+		* @param item the item to remove from the model
+		*/
 		def remove(item : T) {
 			
 			val itemIndex = _list.indexOf(item)
@@ -84,11 +126,21 @@ package org.zkoss.zkscala.lib.models {
 			}
 		}
 
+		/**
+		* Remove item to the model
+		*
+		* @param item the item to remove from the model
+		*/
 		def -=(item : T) {
 			remove(item)
 		}
 
-		//sorting for ListModelExt
+		/** Sorts the data.
+		*
+		* @param cmpr the comparator.
+		* @param ascending whether to sort in the ascending order.
+		* It is ignored since this implementation uses cmprt to compare.
+		*/
 		def sort(cmpr : java.util.Comparator[_], asc : Boolean) {
 			
 			//perform conversion to work around the API
@@ -99,6 +151,10 @@ package org.zkoss.zkscala.lib.models {
 			fireEvent(ListDataEvent.STRUCTURE_CHANGED, -1, -1)
 		}
 
+		/** Debugging purposes only
+		*
+		* @return ascending whether to sort in the ascending order.
+		*/
 		override def toString = _list.mkString(this.getClass.getSimpleName + "(", ",", ")")
 
 	}
