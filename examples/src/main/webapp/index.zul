@@ -64,7 +64,8 @@
 				<label value="Components"/>
 					<a label="SimpleLabel component" onClick='xcontents.src = "/components/simplelabel.zul"'/>
 				<label value="Listbox"/>
-					<a label="CRUD" onClick='xcontents.src = "/examples/listbox/crud/index.zul"'></a>
+					<a label="CRUD (ZKScala Model)" onClick='xcontents.src = "/examples/listbox/crud/index.zul"'></a>
+					<a label="CRUD (ZK Model)" onClick='xcontents.src = "/examples/listbox/zkcrud/index.zul"'></a>
 			</vbox>
 		</div>
 	</west>
