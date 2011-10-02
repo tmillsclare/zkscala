@@ -63,6 +63,8 @@
 					<a label="Autosorting" onClick='xcontents.src = "/examples/grid/autosorting/index.zul"'></a>
 				<label value="Components"/>
 					<a label="SimpleLabel component" onClick='xcontents.src = "/components/simplelabel.zul"'/>
+				<label value="Listbox"/>
+					<a label="CRUD" onClick='xcontents.src = "/examples/listbox/crud/index.zul"'></a>
 			</vbox>
 		</div>
 	</west>

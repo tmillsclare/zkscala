@@ -1,0 +1,34 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./departmentdiv"?>
+
+<?page title="Departments" contentType="text/html;charset=UTF-8"?>
+<div id="departmentdiv"
+    apply="org.zkoss.zkscala.examples.listbox.crud.ListboxCrudController" hflex="true">
+    <listbox id="lstDepartment" multiple="true" rows="5"
+        model="@{departmentdiv$composer.getAllDepartments, load-after='btnAddDepartment.onClick, btnDeleteDepartment.onClick, btnUpdateDepartment.onClick'}"
+        selectedItem="@{departmentdiv$composer.currentDepartment}">
+        <auxhead>
+            <auxheader label="Departments" colspan="4" />
+        </auxhead>
+        <listhead>
+            <listheader label="ID" width="150px" />
+            <listheader label="Name" width="300px" />
+        </listhead>
+        <listitem self="@{each='department'}" value="@{department}">
+            <listcell label="@{department.id}" />
+            <listcell label="@{department.name}" />
+        </listitem>
+    </listbox>
+
+    <groupbox>
+        <caption label="Department" />
+        Name:
+        <textbox id="txtDepartmentName" cols="25"
+            value="@{departmentdiv$composer.currentDepartment.name}" />
+        <button id="btnAddDepartment" label="Add" width="36px"
+            height="24px" />
+        <button id="btnUpdateDepartment" label="Update" width="46px"
+            height="24px" />
+        <button id="btnDeleteDepartment" label="Delete" width="46px"
+            height="24px" />
+    </groupbox>
+</div>
