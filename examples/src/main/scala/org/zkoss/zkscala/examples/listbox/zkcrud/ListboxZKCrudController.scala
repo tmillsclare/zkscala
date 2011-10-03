@@ -12,40 +12,34 @@ package org.zkoss.zkscala.examples.listbox.zkcrud {
 	import org.zkoss.zkscala.lib.models.BindingListModelList
 
 	import org.zkoss.zkscala.examples.listbox.crud.Department
+	import org.zkoss.zkscala.examples.listbox.crud.DepartmentDataProvider
 
 	class ListboxZKCrudController extends GenericForwardComposer {
 		
 		//autowired by ZK
 		var txtDepartmentName : Textbox = null
+		var txtDepartmentDescription: Textbox = null
 		var lstDepartment : Listbox = null
 
-		var defaultDepartment = new Department("Support")
-
 		var myContributorList = new scala.collection.mutable.ListBuffer[Department]()
-
-		val mySeq = Seq(
-			defaultDepartment,
-			new Department("Marketing"),
-			new Department("RD"),
-		    new Department("Accounting"),
-		    new Department("Law")
-		)
-
-		myContributorList ++= mySeq
+		myContributorList ++= DepartmentDataProvider.departments
 		
 		//create a live data model
 		val listModel = new org.zkoss.zkplus.databind.BindingListModelList(myContributorList, true)
 		def getAllDepartments = listModel
 
-		@BeanProperty var currentDepartment : Department = defaultDepartment
+		@BeanProperty var currentDepartment : Department = DepartmentDataProvider.departments.apply(0)
 
 		def onClick$btnAddDepartment = {
 			val departmentName = txtDepartmentName.getText
+			val departmentDescription = txtDepartmentDescription.getText
 
-			if(departmentName.equals("")) {
-				Clients.alert("Please enter a department Name")
+
+			if(departmentName.equals("") || departmentDescription.equals("")) {
+				Clients.alert("Please enter a department name and description")
 			} else {
-				val department = new Department(departmentName)
+				val department = new Department(departmentName, departmentDescription)
+
 				/*
 
 				As the list is live you can now use either:

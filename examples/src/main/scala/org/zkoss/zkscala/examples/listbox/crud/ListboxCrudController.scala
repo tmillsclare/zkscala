@@ -14,30 +14,22 @@ package org.zkoss.zkscala.examples.listbox.crud {
 		
 		//autowired by ZK
 		var txtDepartmentName : Textbox = null
+		var txtDepartmentDescription: Textbox = null
 		var lstDepartment : Listbox = null
-
-		var defaultDepartment = new Department("Support")
-
-		val myContributorList = Seq(
-			defaultDepartment,
-			new Department("Marketing"),
-			new Department("RD"),
-		    new Department("Accounting"),
-		    new Department("Law")
-		)
 		
-		val listModel = new BindingListModelList[Department](myContributorList)
+		val listModel = new BindingListModelList[Department](DepartmentDataProvider.departments)
 		def getAllDepartments = listModel
 
-		@BeanProperty var currentDepartment : Department = defaultDepartment
+		@BeanProperty var currentDepartment : Department = DepartmentDataProvider.departments.apply(0)
 
 		def onClick$btnAddDepartment = {
 			val departmentName = txtDepartmentName.getText
+			val departmentDescription = txtDepartmentDescription.getText
 
-			if(departmentName.equals("")) {
-				Clients.alert("Please enter a department Name")
+			if(departmentName.equals("") || departmentDescription.equals("")) {
+				Clients.alert("Please enter a department name and description")
 			} else {
-				val department = new Department(departmentName)
+				val department = new Department(departmentName, departmentDescription)
 				listModel += department
 			}
 		}
