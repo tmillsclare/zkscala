@@ -3,7 +3,7 @@ import Keys._
 
 object BuildSettings {
 	val buildOrganization = "zkoss"
-	val buildVersion      = "0.6"
+	val buildVersion      = "0.7.5"
 
 	val buildSettings = Defaults.defaultSettings ++ Seq (
 		name := "zkscala-examples",
